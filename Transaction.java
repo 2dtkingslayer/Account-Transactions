@@ -30,7 +30,7 @@ public class Transaction {
                     amount.add(Integer.parseInt(information[2])); // new beginning balance
                 } else {
                     information = line.split(","); // split the lines
-                    amount.set(amount.size()-1, amount.get(amount.size()-1) + Integer.parseInt(information[2])); // update balance
+                    amount.set(amount.size()-1, amount.get(amount.size()-1) + Integer.parseInt(information[2])); // update current balance
                 }
                 // seek MIN
                 if (amount.get(amount.size()-1) < min.get(min.size()-1)) min.set(min.size()-1, amount.get(amount.size()-1));
@@ -55,7 +55,7 @@ public class Transaction {
             } // information
             output.close();
         } catch (IOException e) {
-            System.out.println("An error occurred.");
+            System.out.println("An error occurred");
             e.printStackTrace();
         } 
     }
